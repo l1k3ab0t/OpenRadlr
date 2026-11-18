@@ -1159,6 +1159,25 @@ label output {
   transition: border-color 0.2s ease;
 }
 
+.desktop-device-picker {
+  width: min(560px, calc(100vw - 32px));
+  max-height: min(620px, calc(100vh - 32px));
+  padding: 18px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.desktop-device-picker::backdrop { background: rgba(0, 0, 0, 0.68); }
+.desktop-device-picker-head { display: flex; justify-content: space-between; gap: 16px; align-items: start; margin-bottom: 14px; }
+.desktop-device-picker-head p { margin: 0; color: var(--muted); font-size: 14px; }
+.desktop-device-picker-status { min-height: 1.35em; margin: 0 0 10px; color: var(--muted); font-size: 14px; }
+.desktop-device-picker-list { display: grid; gap: 8px; overflow: auto; }
+.desktop-device-choice { display: grid; gap: 2px; padding: 12px 14px; text-align: left; }
+.desktop-device-choice strong { font-size: 15px; }
+.desktop-device-choice span { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+
 .device-text {
   display: grid;
   gap: 1px;

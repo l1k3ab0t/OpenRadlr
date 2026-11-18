@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-bluetooth-write"
+description = "Enables the bluetooth_write command without any pre-configured scope."
+commands.allow = ["bluetooth_write"]
+
+[[permission]]
+identifier = "deny-bluetooth-write"
+description = "Denies the bluetooth_write command without any pre-configured scope."
+commands.deny = ["bluetooth_write"]

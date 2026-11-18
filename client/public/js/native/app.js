@@ -9,6 +9,8 @@ import { NativeBluetooth } from "../ble/nativeBluetooth.js";
 
 /** The app's native plugins, or null in a browser. */
 export function nativePlugins(win = globalThis) {
+  const desktop = win.OpenRadlrDesktop;
+  if (desktop?.isNativePlatform?.()) return desktop.Plugins ?? {};
   const capacitor = win.Capacitor;
   return capacitor?.isNativePlatform?.() ? (capacitor.Plugins ?? {}) : null;
 }

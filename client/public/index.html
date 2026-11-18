@@ -83,6 +83,7 @@
     <link rel="modulepreload" href="js/view/badges.js" />
     <link rel="modulepreload" href="js/view/canvas.js" />
     <link rel="modulepreload" href="js/view/deleteConfirm.js" />
+    <link rel="modulepreload" href="js/view/desktopDevicePicker.js" />
     <link rel="modulepreload" href="js/view/deviceSetup.js" />
     <link rel="modulepreload" href="js/view/events.js" />
     <link rel="modulepreload" href="js/view/externalLink.js" />
@@ -461,6 +462,14 @@
               </dialog>
             </details>
             </details>
+            <dialog id="desktop-device-picker" class="desktop-device-picker" aria-labelledby="desktop-device-picker-title">
+              <div class="desktop-device-picker-head">
+                <div><h2 id="desktop-device-picker-title" data-i18n="desktopBluetooth.title">Choose a Bluetooth device</h2><p data-i18n="desktopBluetooth.hint">Nearby compatible devices</p></div>
+                <button type="button" id="desktop-device-picker-cancel" class="secondary small" data-i18n="desktopBluetooth.cancel">Cancel</button>
+              </div>
+              <p id="desktop-device-picker-status" class="desktop-device-picker-status" role="status"></p>
+              <div id="desktop-device-picker-list" class="desktop-device-picker-list" aria-live="polite"></div>
+            </dialog>
           </form>
         </div>
         <footer class="build-line">

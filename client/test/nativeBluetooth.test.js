@@ -233,6 +233,17 @@ test("inside the app, Bluetooth comes from the native plugin", () => {
   assert.equal(isBluetoothAvailable(nav), true);
 });
 
+test("inside the desktop app, Bluetooth comes from the native plugin", () => {
+  const nav = {};
+  const { plugin } = fakeBlePlugin();
+  installNativeApp({
+    plugins: nativePlugins({ OpenRadlrDesktop: { isNativePlatform: () => true, Plugins: { BluetoothLe: plugin } } }),
+    navigator: nav,
+    storage: null,
+  });
+  assert.ok(nav.bluetooth instanceof NativeBluetooth);
+});
+
 test("the native wake lock keeps the screen on until it is released", async () => {
   const calls = [];
   const lock = nativeWakeLock({ keepAwake: async () => calls.push("keepAwake"), allowSleep: async () => calls.push("allowSleep") });

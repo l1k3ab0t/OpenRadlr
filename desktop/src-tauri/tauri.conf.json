@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "OpenRadlr",
+  "version": "0.1.0",
+  "identifier": "com.openradlr.desktop",
+  "build": {
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "",
+    "frontendDist": "https://app.openradlr.com"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "security": {
+      "capabilities": ["openradlr-server"]
+    },
+    "windows": []
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": ["icon.png"]
+  }
+}

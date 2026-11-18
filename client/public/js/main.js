@@ -129,9 +129,11 @@ import { languageOptions } from "./i18n/selector.js";
 import { displayFrame, rideId, workoutPlanFrame } from "./display/displayFrame.js";
 import { PairingSession, claimCode, isPaired, renewScreenKey, screenKey } from "./net/screenPairing.js";
 import { createScreensDialog } from "./view/screensDialog.js";
+import { installDesktopDevicePicker } from "./view/desktopDevicePicker.js";
 
 // Inside the OpenRadlr app: native Bluetooth, wake lock and file saving (docs/app.md).
 const nativeApp = installNativeApp();
+installDesktopDevicePicker();
 function setNativeImmersive(enabled) {
   nativeApp?.setImmersive?.(enabled).catch((error) => console.warn("System bars:", error));
 }
@@ -1343,7 +1345,7 @@ async function connectDevice(connect, onConnected, kind, { pending = t("devices.
     // Given up quietly (another device was connected meanwhile) or the picker was closed: nothing to say.
     const cancelled = error.name === "AbortError" || /cancel/i.test(error.message ?? "");
     settle(cancelled ? null : { state: "error", text: connectErrorText(error, deviceName) });
-    if (!cancelled && error.name !== "NotFoundError") deviceLog.error(`Connecting failed: ${error.message}`);
+    if (!cancelled && error.name !== "NotFoundError") deviceLog.error(`Connecting failed: ${error.message ?? String(error)}`);
     return false;
   }
 }

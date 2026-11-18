@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-bluetooth-write-without-response"
+description = "Enables the bluetooth_write_without_response command without any pre-configured scope."
+commands.allow = ["bluetooth_write_without_response"]
+
+[[permission]]
+identifier = "deny-bluetooth-write-without-response"
+description = "Denies the bluetooth_write_without_response command without any pre-configured scope."
+commands.deny = ["bluetooth_write_without_response"]

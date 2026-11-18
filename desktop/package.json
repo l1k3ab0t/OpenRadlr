@@ -1,0 +1,18 @@
+{
+  "name": "openradlr-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OpenRadlr Linux desktop shell.",
+  "license": "AGPL-3.0-or-later",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0"
+  }
+}

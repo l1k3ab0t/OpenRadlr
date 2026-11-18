@@ -1,0 +1,27 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "openradlr-server",
+  "description": "Only the official OpenRadlr page may use the desktop bridge.",
+  "windows": ["main"],
+  "local": false,
+  "remote": {
+    "urls": [
+      "https://app.openradlr.com/**",
+      "http://127.0.0.1:8080/**",
+      "http://localhost:8080/**"
+    ]
+  },
+  "permissions": [
+    "core:default",
+    "allow-bluetooth-initialize",
+    "allow-bluetooth-is-enabled",
+    "allow-bluetooth-devices",
+    "allow-bluetooth-scan",
+    "allow-bluetooth-connect",
+    "allow-bluetooth-disconnect",
+    "allow-bluetooth-services",
+    "allow-bluetooth-write",
+    "allow-bluetooth-write-without-response",
+    "allow-bluetooth-notifications"
+  ]
+}
